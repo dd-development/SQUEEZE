@@ -1,0 +1,191 @@
+:root {
+    --tSize: 165%; /* Price description text */
+    --pSize: 175%; /* Actual price text ex. $3 */
+    --hSize: 300%; /* Header text */
+}
+
+/* recipe  */
+
+.modal {
+    font-size: 35px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 120%;
+    overflow: auto; /* Enable scrolling if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+  }
+
+
+  /* Modal content box */
+  .modal-content {
+    user-select: none;
+    background-color: #eee9b8;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #f1cf10;
+    width: 50%;
+    height: 30%;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .modal-content h2 {
+    color: white;
+    -webkit-text-stroke-width: 2.5px; /* Needs to be scaled, done in JS file */
+    -webkit-text-stroke-color: black;
+    margin: 0;
+  }
+
+  .modal-content label {
+    -webkit-text-stroke-width: 1.5px; /* Needs to be scaled, done in JS file */
+    -webkit-text-stroke-color: black;
+    margin: 0;
+  }
+
+  .modal-content input {
+    font-size: 25px;
+    margin: 0;
+  }
+
+  .modal-content button {
+    background-color: white;
+    border: 1px solid black;
+    font-size: 25px;
+    margin: 0;
+  }
+
+  .modal-content button:hover {
+    background-color: wheat;
+    border: 1px solid black;
+    font-size: 25px;
+    margin: 0;
+  }
+
+  /* Close button */
+  .close {
+    color: #de9d9d;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /* Input field styling */
+  input[type="number"] {
+    width: 50px;
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+  }
+
+
+/* recipe */
+#result {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    font-size: 18px;
+    background: #fff;
+    margin: 0 1rem;
+    padding: 1rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 0.5rem;
+}
+#ingredientsMenu {
+    visibility: hidden;
+
+    z-index: 5;
+    height: 900px; /* Need to scale */
+    width: 700px; /* Need to scale */
+    position: absolute;
+
+    top: 10px; /* Need to scale */
+    left: 1210px; /* Need to scale */
+    
+    background-color: antiquewhite;
+    border: medium solid black;
+    border-collapse: collapse;
+
+    user-select: none;
+}
+
+#ingredientsMenu td {
+    /* vertical-align: top; */
+    font-size: var(--tSize);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border: medium solid black;
+}
+
+#ingredientsMenu tr {
+    /* vertical-align: top; */
+    text-align: center;
+    border: medium solid black;
+}
+
+#ingredientsMenu img {
+    /* vertical-align: top; */
+    width: 40%;
+    height: 40%;
+}
+
+#ingredientsMenu p {
+    /* vertical-align: top; */
+    margin: 0;
+    font-size: var(--pSize);
+    color: green;
+}
+
+#exitBtn, #recipeBtn {
+    font-size: var(--hSize);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: burlywood;
+    border: medium solid black;
+}
+
+/* ALL THIS STUFF BELOW NEEDS TO BE SCALED */
+
+#dispDiv {
+    z-index: 6;
+    position: absolute;
+    left: 10px;
+    top: 100px;
+}
+
+#dispDiv div {
+    display: flex;
+}
+
+#dispDiv img {
+    max-width: 100px;
+    max-height: 100px;
+    user-select: none;
+    /* background: rgba(0, 0, 0, .1) */
+}
+
+#dispDiv p {
+    margin: 0;
+    margin-top: 20px;
+    margin-left: 10px;
+
+    font-size: 48px;
+    color: red;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    -webkit-text-stroke-width: 2px; /* Needs to be scaled, done in JS file */
+    -webkit-text-stroke-color: black;
+
+    user-select: none;
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SQUEEZE!</title>
+    <link rel="stylesheet" href="./0main.css">
+    <link rel="stylesheet" href="./0menus.css">
+    <link rel="icon" href="./favicon.png" type="image/x-icon">
+    <script src="0main.js" defer></script>
+  </head>
+
+  <body>
+    <!--<div id="result" ></div>-->
+    <div id="dispDiv">
+      <div>
+        <img id="lemonadeImg" src="lemonade.png" ondragstart="return false;" onclick="openRecipeMenu(1)" alt = "Lemonade"></img>
+        <p id="numLemonade">0</p>
+      </div>
+      <div>
+        <img src="lemon.png" ondragstart="return false;"></img>
+        <p id="numLemons">0</p>
+        <p id="fL">/ 6</p>
+      </div>
+      <div>
+        <img src="sugar.png" ondragstart="return false;"></img>
+        <p id="numSugar">0</p>
+        <p id="fS">/ 1</p>
+      </div>
+      <div>
+        <img src="water.png" ondragstart="return false;"></img>
+        <p id="numWater">0</p>
+        <p id="fW">/ 6</p>
+      </div>
+      <div>
+        <img src="icebag.png" ondragstart="return false;"></img>
+        <p id="numIce">0</p>
+        <p id="fI">/ 20</p>
+      </div>
+      <div>
+        <img src="cups.png" ondragstart="return false;"></img>
+        <p id="numCups">0</p>
+        <p id="fC">/ 1</p>
+      </div>
+    </div>
+    <!-- recipe -->
+    <div id="recipeModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onmouseover="tileSound.load();tileSound.play()" onclick="closeRecipeMenu()">&times;</span>
+        <h2>UPDATE YOUR LEMONADE RECIPE/PRICE</h2>
+        <div>
+          <label for="recipeLemons" style="color:yellow;">🍋 Lemons:</label>
+          <input id="recipeLemons" type="number" value="6" min="1" max="12" onclick="tileSound.load();tileSound.play()">
+        </div>
+        <div>
+          <label for="recipeWater" style="color:rgb(0, 195, 255);">🌊 Water:</label>
+          <input id="recipeWater" type="number" value="6" min="1" max="12" onclick="tileSound.load();tileSound.play()">
+        </div>
+        <div>
+          <label for="recipeSugar" style="color:rgb(243, 184, 247);">🧁 Sugar:</label>
+          <input id="recipeSugar" type="number" value="1" min="1" max="12" onclick="tileSound.load();tileSound.play()">
+        </div>
+        <div>
+          <label for="priceChange" style="color:lightgreen;">💰 Price: $</label>
+          <input id="priceChange" type="number" value="1" min="1" max="10" onclick="tileSound.load();tileSound.play()">
+        </div>
+        <button onmouseover="tileSound.load();tileSound.play()" onclick="saveRecipe()">Save Changes</button>
+        <button onmouseover="tileSound.load();tileSound.play()" onclick="makeLemonade()">Make Lemonade</button>
+      </div>
+    </div>
+    <!-- recipe -->
+    <table id="ingredientsMenu">
+      <tr>
+        <th id="exitBtn" onclick="exitMenu()">EXIT</th>
+        <th id="recipeBtn">PRICES</th> <!-- THIS USED TO BE RECIPE-->
+      </tr>
+      <tr>
+        <td><img id="buyLemon" src="lemon.png" ondragstart="return false;" onclick="buyIngredient(0)"></img></td>
+        <td>Buy 4 lemons for: <p id="pL">$2</p></td>
+      </tr>
+      <tr>
+        <td><img id="buySugar" src="sugar.png" ondragstart="return false;" onclick="buyIngredient(1)"></img></td>
+        <td>Buy 8 cups for: <p id="pS">$3</p></td>
+      </tr>
+      <tr>
+        <td><img id="buyWater" src="water.png" ondragstart="return false;" onclick="buyIngredient(2)"></img></td>
+        <td>Buy 16 cups for: <p id="pW">$1</p></td>
+      </tr>
+      <tr>
+        <td><img id="buyIceBag" src="icebag.png" ondragstart="return false;" onclick="buyIngredient(3)"></img></td>
+        <td>Buy 200 cubes for: <p id="pI">$2</p></td>
+      </tr>
+      <tr>
+        <td><img id="buyCups" src="cups.png" ondragstart="return false;" onclick="buyIngredient(4)"></img></td>
+        <td>Buy 30 cups for: <p id="pC">$2</p></td>
+      </tr>
+    </table>
+
+    <p id="approvalRating">PUBLIC APPROVAL RATING: 3/5</p>
+    <p id="moneyText">CASH: $12</p>
+    <p id="priceText" onclick="openRecipeMenu(2)">$3</p>
+    <img id="ingredients" ondragstart="return false;" src="ingredients.png" onclick="openMenu()"></img>
+    <img id="stand" ondragstart="return false;" src="stand.png"></img>
+    <img id="seller1" ondragstart="return false;" src="seller1.gif" hidden></img>
+    <img id="seller2" ondragstart="return false;" src="seller2.gif" ></img>
+    <img id="bg" ondragstart="return false;" src="bg/2.png"></img>
+  </body>
+</html>

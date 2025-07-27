@@ -1,0 +1,185 @@
+:root {
+    --fSize: 78px;
+
+    --cLeft: 2000px;
+    --cTop: 600px;
+
+    --aInFrom: 2000px;
+    --aInTo: 1100px;
+
+    --aOutFrom: 1100px;
+    --aOutTo: -300px;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+/* 
+    KEY FOR ATTRIBUTES OF CSS ENTRIES BELOW
+
+- width: Actual width of element box and image, must be the ORIGINAL width of the ACTUAL IMAGE FILE as this will be scaled later
+- height: Actual height of element box and image, must be the ORIGINAL height of the ACTUAL IMAGE FILE as this will be scaled later
+- z-index: Layer number of image (what goes on top or below of other elements), higher number is the top
+- position: Always absolute because we need absolute positioning
+- left: How far from the left of the page the image is, specified in pixels for development display and scaled accordingly in JS file
+- top: How far from the top of the page the image is, specified in pixels for development display and scaled accordingly in JS file
+- user-select: Always none so the user can't drag or select the image and ruin the immersiveness of the game
+
+    WARNING: THE DEFAULT MARGIN FROM THE TOP IS 78px, THIS MUST BE CORRECTED WHEN DOING NEGATIVE POSITIONING, LIKE IN #moneyText
+*/
+
+.levelAnim {
+    user-select: none;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1000;
+    animation-name: levelIn;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    opacity: 100%;
+}
+
+@keyframes levelIn {
+    0% {
+        opacity: 100%;
+    }
+    75% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0%;
+    }
+}
+
+#moneyText {
+    margin-top: 0; /* Paragraphs must have some weird default top margin equal to the font size or something, not sure yet. Either way get rid of it. */
+
+    z-index: 4;
+    position: absolute;
+    left: 10px; /* Needs to be scaled */
+    user-select: none;
+
+    font-size: var(--fSize); /* Needs to be scaled, done in JS file */
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: yellow;
+    -webkit-text-stroke-width: 3px; /* Needs to be scaled, done in JS file */
+    -webkit-text-stroke-color: black;
+}
+
+#priceText {
+    margin-top: 0; /* Paragraphs must have some weird default top margin equal to the font size or something, not sure yet. Either way get rid of it. */
+
+    z-index: 4;
+    position: absolute;
+    top: 670px;
+    left: 920px; /* Needs to be scaled */
+    user-select: none;
+
+    font-size: var(--fSize); /* Needs to be scaled, done in JS file */
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: lightgreen;
+    -webkit-text-stroke-width: 2px; /* Needs to be scaled, done in JS file */
+    -webkit-text-stroke-color: black;
+}
+
+#approvalRating {
+    margin-top: 0; /* Paragraphs must have some weird default top margin equal to the font size or something, not sure yet. Either way get rid of it. */
+
+    z-index: 4;
+    position: absolute;
+    right: 10px; /* Needs to be scaled */
+    user-select: none;
+
+    font-size: var(--fSize); /* Needs to be scaled, done in JS file */
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: yellow;
+    -webkit-text-stroke-width: 3px; /* Needs to be scaled, done in JS file */
+    -webkit-text-stroke-color: black;
+}
+
+#ingredients { /* The ingredients on the lemonade stand */
+    width: 118px;
+    height: 66px;
+    z-index: 3;
+    position: absolute;
+    left: 836px;
+    top: 552px;
+    user-select: none;
+}
+
+#stand { /* The lemonade stand, probably need to split that image up later */
+    width: 338px;
+    height: 560px;
+    z-index: 2;
+    position: absolute;
+    left: 789px;
+    top: 259px;
+    user-select: none;
+}
+
+#seller1 { /* Original dancing guy, hidden on start in HTML because his loop isn't smooth */
+    width: 349px;
+    height: 400px;
+    z-index: 1;
+    position: absolute;
+    left: 845px;
+    top: 416px;
+    user-select: none;
+}
+
+#seller2 { /* Snoop Dogg, new main character because his loop is perfect */
+    width: 235px;
+    height: 407px;
+    z-index: 1;
+    position: absolute;
+    left: 893px;
+    top: 407px;
+    user-select: none;
+}
+
+/*ANIMATIONS FOR CUSTOMERS*/
+
+.customer {
+    position: absolute;
+    z-index: 4;
+    transform: scale(-6, 6);
+    left: var(--cLeft);
+    top: var(--cTop);
+    user-select: none;
+}
+
+.cAnim1 {
+    animation-name: customerMoveIn;
+    animation-duration: 3.8s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+
+.cAnim2 {
+    animation-name: customerMoveOut;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+
+@keyframes customerMoveIn {
+    from {
+        left: var(--aInFrom);
+    }
+    to {
+        left: var(--aInTo);
+    }
+}
+
+@keyframes customerMoveOut {
+    from {
+        left: var(--aOutFrom);
+    }
+    to {
+        left: var(--aOutTo);
+    }
+}
