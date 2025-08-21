@@ -2,6 +2,9 @@
 
 Lemonade stand economy simulator game built for the web using JavaScript, HTML, and CSS.
 
+## DEMO VIDEO
+https://www.youtube.com/watch?v=_VSMJDxGnTw
+
 ## Overview and Credits
 *SQUEEZE!* was designed and developed over the course of 8 weeks with a team of 4 people utilizing the Scrum Agile framework and Jira:
 
